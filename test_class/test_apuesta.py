@@ -15,7 +15,7 @@ def test_repr():
     assert("fichas: " in msj)
     assert("0" in msj) # verifica que esten la cadena de texto y lo devuelve
 
-def test_ponerFicha():
+def test_ponerFicha(): #verifica que el metodo ponerFicha añade el numero de fichas
     a = Apuesta()
     a.ponerFicha(8)
     assert(a.fichas == 8)
@@ -30,18 +30,18 @@ def test_ponerFicha():
     a.ponerFicha(2)
     assert(a.fichas == 4)
 
-def test_tomarFicha_sin_argumentos():
+def test_tomarFicha_sin_argumentos(): #verifica que el metodo tomarFicha funcione correctamente sin tener un argumento, por defecto quita 1 si no tiene uno
     a = Apuesta()
     a.fichas = 5
     a.tomarFicha()
     assert(a.fichas == 4)
 
     a = Apuesta()
-    a.fichas(10)
+    a.fichas = 10
     a.tomarFicha()
     assert(a.fichas == 9)
 
-def test_tomarFicha_error():
-    with pytest.raises(ValueError):
+def test_tomarFicha_error(): #Verificar que se lanza un ValueError si se intenta quitar fichas cuando no hay suficientes.
+    with pytest.raises(ValueError): #espera que devuelva un valueError cuando se llama en metodo tomar ficha sin haber antes añedido fichas
         a = Apuesta()
         a.tomarFicha()
