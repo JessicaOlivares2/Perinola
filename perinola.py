@@ -1,16 +1,3 @@
-#from random import randint
-#class Dado:
-#    def __init__(self, caras=6):
-#        if (caras <= 0):
-#            raise ValueError("El numero de caras no puede ser negativo")
-#        self.numero = 1
-#        self.caras = caras
-#    def __repr__(self):
-#        return f"Dado de {self.caras} caras: {self.numero}"
-#    def tirar(self):
-#        self.numero = randint(1, self.caras)
-#        return self.numero    
-    
 from random import choice
 
 
