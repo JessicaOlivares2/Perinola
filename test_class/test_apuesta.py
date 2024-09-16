@@ -11,8 +11,8 @@ def test_constructor():
 def test_repr():
     a = Apuesta()
     msj = a.__repr__() #llama al metodo repr de la clase apuesta y lo almacena en la variable msj
-    assert("Apuestas: " in msj)
-    assert("fichas: " in msj)
+    assert("Apuesta: " in msj)  # Nota el singular 'Apuesta'
+    assert("fichas" in msj)
     assert("0" in msj) # verifica que esten la cadena de texto y lo devuelve
 
 def test_ponerFicha(): #verifica que el metodo ponerFicha añade el numero de fichas
@@ -34,12 +34,12 @@ def test_tomarFicha_sin_argumentos(): #verifica que el metodo tomarFicha funcion
     a = Apuesta()
     a.fichas = 5
     a.tomarFicha()
-    assert(a.fichas == 4)
+    assert a.fichas == 4
 
     a = Apuesta()
     a.fichas = 10
     a.tomarFicha()
-    assert(a.fichas == 9)
+    assert a.fichas == 9
 
 def test_tomarFicha_error(): #Verificar que se lanza un ValueError si se intenta quitar fichas cuando no hay suficientes.
     with pytest.raises(ValueError): #espera que devuelva un valueError cuando se llama en metodo tomar ficha sin haber antes añedido fichas

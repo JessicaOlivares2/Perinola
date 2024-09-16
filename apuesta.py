@@ -3,7 +3,7 @@ class Apuesta:
         self.fichas = 0 #inicia el atributo fichas en 0
 
     def __repr__(self):
-        return f'Apuesta: {self.fichas} fichas' #muestra las fichas
+        return f"Apuesta: {self.fichas} fichas" #muestra las fichas
     
     def ponerFicha(self, cuantas=1):
         self.fichas = self.fichas + cuantas #se agrega una cantidad al total de fichas
@@ -13,6 +13,7 @@ class Apuesta:
         if(cuantas > self.fichas):
             raise ValueError(f"no hay fichas suficiente (no podes sacar {cuantas}, quedan {self.fichas})")
     #si el numero de fichas a sacar es mayor al total que hay va a salir un mensaje de error
+        self.fichas -= cuantas  # Restar las fichas cuando la condición es correcta
 
     def tomarTodas(self):
         """Retira todas las fichas y devuelve el número de fichas retiradas."""

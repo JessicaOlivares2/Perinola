@@ -4,7 +4,7 @@ class Jugador:
         self.fichas = fichas
 
     def __repr__(self):
-            return f'{self.nombre}, {self.fichas} fichas' #devuelve el nombre y las fichas
+            return f'Jugador: {self.nombre}, fichas: {self.fichas} ' #devuelve el nombre y las fichas
 
     def darFicha(self, cuantas=1):
         """Agrega la cantidad especificada de fichas al jugador."""
